@@ -15,7 +15,7 @@ function LeafletGeocoder() {
                 console.log(bbox);
 
                 var latlgn = e.geocode.center;
-                L.marker(latlgn).addTo(map).bindPopup(e.geocode.name).openPopup();
+                L.marker(latlgn).addTo(map).bindPopup(e.geocode.name);
                 map.fitBounds(e.geocode.bbox);
 
                 var poly = L.polygon([
