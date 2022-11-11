@@ -5,10 +5,11 @@ import 'leaflet-control-geocoder/dist/Control.Geocoder.css'
 import 'leaflet-control-geocoder/dist/Control.Geocoder.js'
 import LeafletGeocoder from './LeafletGeocoder';
 import L from "leaflet";
+// import DraggableMarker from './assets/DraggableMarker';
 
 function App() {
 
-  const position = [51.505, -0.09];
+  const position = [-3.7304512, -38.5217989];
 
   const polyline = [
     [51.505, -0.09],
@@ -54,23 +55,16 @@ function App() {
   ]
 
   return (
-    <MapContainer center={position} zoom={13} scrollWheelZoom={false}>
+    <MapContainer center={position} zoom={13} scrollWheelZoom={true}>
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <LeafletGeocoder />
+      {/* <DraggableMarker /> */}
     </MapContainer>
 
   )
 }
-
-let DefaultIcon = L.icon({
-  iconUrl: "https://unpkg.com/leaflet@1.6/dist/images/marker-icon.png",
-  iconSize: [25, 41],
-  iconAnchor: [10, 41],
-  popupAnchor: [2, -40],
-});
-L.Marker.prototype.options.icon = DefaultIcon;
 
 export default App
