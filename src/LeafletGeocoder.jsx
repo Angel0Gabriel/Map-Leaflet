@@ -4,6 +4,7 @@ import L from 'leaflet';
 
 function LeafletGeocoder() {
 
+
     const map = useMap();
     useEffect(() => {
         L.Control.geocoder({
@@ -16,6 +17,7 @@ function LeafletGeocoder() {
 
                 var latlgn = e.geocode.center;
                 L.marker(latlgn).addTo(map).bindPopup(e.geocode.name);
+                // L.marker(latlgn, { icon: icons.black.numbers[777] }).bindPopup(e.geocode.name).fitBounds(e.geocode.bbox);
                 map.fitBounds(e.geocode.bbox);
 
                 var poly = L.polygon([

@@ -5,6 +5,7 @@ import 'leaflet-control-geocoder/dist/Control.Geocoder.css'
 import 'leaflet-control-geocoder/dist/Control.Geocoder.js'
 import LeafletGeocoder from './LeafletGeocoder';
 import L from "leaflet";
+import icons from "leaflet-color-number-markers";
 // import DraggableMarker from './assets/DraggableMarker';
 
 function App() {
